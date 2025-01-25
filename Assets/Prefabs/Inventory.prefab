@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 86091690764461165}
   - component: {fileID: 4541851394063068869}
   - component: {fileID: 5283704796121153615}
+  - component: {fileID: 619255321969686877}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -361,6 +362,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalLayoutGroup: {fileID: 4410561579516685610}
+  dragable: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+  scrollRightObj: {fileID: 1664268846908763657}
+  scrollLeftObj: {fileID: 6899405869312548475}
+--- !u!114 &619255321969686877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255370066269868509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37c3ccd803e15d4c80d8e4f534c5119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  occupied: 0
+  occupant: {fileID: 0}
+  inventoryScript: {fileID: 5283704796121153615}
 --- !u!1 &6899405869312548475
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,10 +680,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7323855378445241374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.079815164, y: 0}
-  m_AnchorMax: {x: 0.91700006, y: 1}
-  m_AnchoredPosition: {x: 1.5, y: 0.45999908}
-  m_SizeDelta: {x: -707, y: -112}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.15603638, y: 0.45999908}
+  m_SizeDelta: {x: 700, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4489166166248706055
 CanvasRenderer:
@@ -722,7 +741,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 0
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0

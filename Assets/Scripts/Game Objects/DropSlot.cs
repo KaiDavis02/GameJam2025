@@ -6,7 +6,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
 {
     public bool occupied;
     public DragDrop occupant;
-    public void OnDrop(PointerEventData eventData)
+    public virtual void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
         {
@@ -30,7 +30,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
     {
         
     }
-    public void unoccupy()
+    public virtual void unoccupy(DragDrop dragDrop)
     {
         occupied = false;
         occupant = null;

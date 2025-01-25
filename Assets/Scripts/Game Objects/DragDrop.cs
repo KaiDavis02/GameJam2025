@@ -19,7 +19,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         if (inSlot)
         {
             inSlot = false;
-            slot.unoccupy();
+            slot.unoccupy(this);
         }
         
 
@@ -48,6 +48,12 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     {
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    public void SetWord(Word word)
+    {
+        this.word = word;
+
     }
 
     // Update is called once per frame
