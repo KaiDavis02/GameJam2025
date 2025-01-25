@@ -15,6 +15,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = .6f;
         if (inSlot)
         {
             inSlot = false;
@@ -33,6 +34,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f;
         Debug.Log("End Drag");
     }
 
