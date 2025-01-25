@@ -20,6 +20,10 @@ public class Bubble
     public Word word2;
     public Word word3;
 
+    // in this text the position of the slot will be shown by [SLOT]
+    // we need to figure out how to get this to work later.
+    public string text;
+
     // turns the individual words into the list used for comparison
     public void generateWordList()
     {
@@ -41,6 +45,7 @@ public class Bubble
 
     public int isSolved()
     {
+
         int index = 0;
         foreach(List<string> l in solutions)
         {
