@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class InventoryDrop : DropSlot
 {
     [SerializeField] InventoryScript inventoryScript;
+    [SerializeField] GameObject AngelIntroController;
     public override void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
@@ -15,6 +16,10 @@ public class InventoryDrop : DropSlot
 
             inventoryScript.Add(occupant.word);
             Destroy(occupant.gameObject);
+        }
+        if (AngelIntroController != null)
+        {
+            AngelIntroController.GetComponent<AngelIntro>().done();
         }
     }
 
