@@ -6,6 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Tutorial.unity
+    guid: 0d05940ec4324e740aa77fc545658c80
+  - enabled: 1
+    path: Assets/Scenes/Road2.unity
+    guid: 4289c6825021f6d4b829ffd579d266c4
+  - enabled: 1
+    path: Assets/Scenes/AngelAlley.unity
+    guid: 5c8c248cded9b624d99122cf9b9865b2
+  - enabled: 1
+    path: Assets/Scenes/Church1.unity
+    guid: 2f01daef51c837c408dfe136da51abc1
+  - enabled: 1
+    path: Assets/Scenes/Church2.unity
+    guid: b2219b0df6305594dbc8bc6d0457a5b6
+  - enabled: 1
+    path: Assets/Scenes/Courthouse.unity
+    guid: 20aa8a9aa9e08984982e05e40397ceed
+  - enabled: 1
+    path: Assets/Scenes/DevilAlley.unity
+    guid: 08705c74a153b4e4faaea4b5f6edea63
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 931be970b7a0ace4b91aee44d2b9adee
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5036fc1cc5deeea48988362b1094fe99
+  - enabled: 1
+    path: Assets/Scenes/Road1.unity
+    guid: 13112197b2b86a248b011176398439b5
+  - enabled: 1
+    path: Assets/Scenes/TrialRoom.unity
+    guid: 812485a76af3b744cb4d780d79488f9f
+  - enabled: 1
+    path: Assets/Scenes/Road3.unity
+    guid: 45f41696354d21f49bb400f0c0d5d729
   m_configObjects: {}
