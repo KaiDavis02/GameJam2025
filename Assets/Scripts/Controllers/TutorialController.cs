@@ -26,8 +26,16 @@ public class TutorialController : MonoBehaviour
         testBub.GetComponent<SpeechBubble>().bubble = p.bubblesLeft[p.leftIndex];
         testBub.GetComponent<SpeechBubble>().writeText();
         testBub.GetComponent<SpeechBubble>().Controller = this.gameObject;
+        testBub.GetComponent<RectTransform>().position = new Vector3(-5, 2, 0);
 
-        makeTestFilledBubble();
+
+        GameObject bubble2 = Instantiate(speechBubblePrefab, canvas.transform);
+        bubble2.GetComponent<SpeechBubble>().bubble = p.bubblesRight[p.rightIndex];
+        bubble2.GetComponent<SpeechBubble>().writeText();
+        bubble2.GetComponent<SpeechBubble>().Controller = this.gameObject;
+        bubble2.GetComponent<RectTransform>().position = new Vector3(5, 2, 0);
+
+        //makeTestFilledBubble();
     }
 
     // Update is called once per frame
