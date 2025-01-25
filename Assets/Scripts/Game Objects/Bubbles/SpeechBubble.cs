@@ -114,6 +114,7 @@ public class SpeechBubble : MonoBehaviour
     }
     public void updateWords(Word w, int slotNo)
     {
+        Debug.Log("Updating speech bubble with word: " + w.text);
         switch (slotNo)
         {
             case 1:
@@ -128,7 +129,7 @@ public class SpeechBubble : MonoBehaviour
             default:
                 break;
         }
-        Controller.GetComponent<TutorialController>().checkComplete();
+        Controller.GetComponent<IController>().checkComplete();
     }
     public void addToSlot(int slotNo, DragDrop dd)
     {

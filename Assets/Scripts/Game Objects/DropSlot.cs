@@ -9,6 +9,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
     public DragDrop occupant;
     public SpeechBubble speechBubble;
     public int slotNo;
+    private List<Action<string>> actionList = new List<Action<string>>();
     public virtual void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
@@ -19,10 +20,12 @@ public class DropSlot : MonoBehaviour, IDropHandler
             occupied = true;
             occupant.inSlot = true;
             occupant.slot = this;
+            Debug.Log("Slotted: " + occupant.word.text);
             if (speechBubble != null)
             {
                 speechBubble.updateWords(occupant.word, slotNo);
             }
+            WordChanged(occupant.word.text);
         }
         
     }
@@ -50,5 +53,28 @@ public class DropSlot : MonoBehaviour, IDropHandler
         occupant = dd;
         dd.slot = this;
         dd.inSlot = true;
+    }
+
+
+    /**
+     * Pass this a function taking a String. When word is changed, function will be
+     * called, and passed the new word.
+     */
+    public void AddOnWordChangedEvent(Action<string> a)
+    {
+        Debug.Log("Event registered");
+        actionList.Add(a);
+    }
+
+    /**
+     * Trigger all functions listening for a word change.
+     */
+    private void WordChanged(string newWord)
+    {
+        Debug.Log("Word in slot has been changed");
+        foreach (var a in actionList)
+        {
+            a.Invoke(newWord);
+        }
     }
 }
