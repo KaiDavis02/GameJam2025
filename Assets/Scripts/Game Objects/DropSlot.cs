@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,7 +42,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
     {
         occupied = false;
         occupant = null;
-        speechBubble.updateWords(new Word(), slotNo);
+        speechBubble?.updateWords(new Word(), slotNo);
     }
     public void occupy(DragDrop dd)
     {

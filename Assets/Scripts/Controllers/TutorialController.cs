@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialController : MonoBehaviour
+public class TutorialController : MonoBehaviour, IController
 {
+    public void checkComplete()
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
