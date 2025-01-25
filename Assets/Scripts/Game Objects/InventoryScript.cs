@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class InventoryScript : MonoBehaviour
 {
-    public HorizontalLayoutGroup horizontalLayoutGroup;
-    public GameObject dragable;
+    [SerializeField] HorizontalLayoutGroup horizontalLayoutGroup;
+    [SerializeField] GameObject dragable;
 
     // list of word object in inventory
     private List<Word> words = new List<Word>();
     private int listPosition = 0;
 
-    public GameObject scrollRightObj;
-    public GameObject scrollLeftObj;
+    [SerializeField] GameObject scrollRightObj;
+    [SerializeField] GameObject scrollLeftObj;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,12 @@ public class InventoryScript : MonoBehaviour
             }
         
             // add new gameobjects for the words to disply
+            for (int i = listPosition; i < listPosition + 3; i++)
+            {
+                if (i < words.Count){
+                FillInventory(words[i]);
+                }
+            }
     }
 
     void FillInventory(Word word)
@@ -42,29 +48,46 @@ public class InventoryScript : MonoBehaviour
     
     public void Add(Word word)
     {
-        Debug.Log("Adding " + word+ " to inventory");
+        //Debug.Log("Adding " + word.text + " to inventory");
         words.Add(word);
 
-        // if 3 or less words in list, call fill inventory
-        if (words.Count <= 3) 
+        // if listposition * 3 or less words in list, call fill inventory
+        if (words.Count <= listPosition + 3) 
         {
             FillInventory(word);
+        } else {
+            scrollRightObj.SetActive(true);
         }
     }
 
     public void Take(Word word)
     {
-        Debug.Log("Removing "+ word+ " from inventory");
+        //Debug.Log("Removing "+ word.text + " from inventory");
         words.Remove(word);
+        SetWords();
     }
 
     public void ScrollLeft()
     {
+        listPosition -= 3;
+        SetWords();
+        
+        if (listPosition == 0){
+            scrollLeftObj.SetActive(false);
+        }
 
+        scrollRightObj.SetActive(true);
     }
 
     public void ScrollRight()
     {
+        listPosition += 3;
+        SetWords();
+        
+        if (words.Count < listPosition + 3){
+            scrollRightObj.SetActive(false);
+        }
 
+        scrollLeftObj.SetActive(true);
     }
 }

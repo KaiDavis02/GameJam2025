@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 86091690764461165}
   - component: {fileID: 4541851394063068869}
   - component: {fileID: 5283704796121153615}
-  - component: {fileID: 619255321969686877}
+  - component: {fileID: 144893545808565560}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -365,7 +365,7 @@ MonoBehaviour:
   dragable: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
   scrollRightObj: {fileID: 1664268846908763657}
   scrollLeftObj: {fileID: 6899405869312548475}
---- !u!114 &619255321969686877
+--- !u!114 &144893545808565560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

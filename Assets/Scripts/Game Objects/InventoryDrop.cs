@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class InventoryDrop : DropSlot
 {
-    public InventoryScript inventoryScript;
+    [SerializeField] InventoryScript inventoryScript;
     public override void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)

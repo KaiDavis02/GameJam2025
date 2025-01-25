@@ -6,5 +6,4 @@ public class Word
 {
     public string text;
     public string type;
-
 }
