@@ -12,6 +12,12 @@ public class SpeechBubble : MonoBehaviour
     [SerializeField] VerticalLayoutGroup group;
     [SerializeField] GameObject TextLinePrefab;
     [SerializeField] GameObject AdjustText;
+
+
+    public GameObject Controller;
+
+
+    List<DropSlot> slots;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +63,8 @@ public class SpeechBubble : MonoBehaviour
         int lineIndex = 0;
         int listIndex = 1;
 
+        slots = new List<DropSlot>();
+
         foreach (List<string> l in textList)
         {
             string someWords = "";
@@ -83,6 +91,9 @@ public class SpeechBubble : MonoBehaviour
             if (listIndex < textList.Count)
             {
                 GameObject box = Instantiate(slot, transform);
+                box.GetComponent<DropSlot>().speechBubble = this;
+                box.GetComponent<DropSlot>().slotNo = listIndex;
+                slots.Add(box.GetComponent<DropSlot>());
                 if (lines[lineIndex].GetComponent<TextLine>().spaceToAdd(box))
                 {
                     lines[lineIndex].GetComponent<TextLine>().addStuff(box);
@@ -100,5 +111,27 @@ public class SpeechBubble : MonoBehaviour
         }
 
         //text.text = bubble.text;
+    }
+    public void updateWords(Word w, int slotNo)
+    {
+        switch (slotNo)
+        {
+            case 1:
+                bubble.word1 = w;
+                break;
+            case 2:
+                bubble.word2 = w;
+                break;
+            case 3:
+                bubble.word3 = w;
+                break;
+            default:
+                break;
+        }
+        Controller.GetComponent<TestController>().checkComplete();
+    }
+    public void addToSlot(int slotNo, DragDrop dd)
+    {
+        slots[slotNo - 1].occupy(dd);
     }
 }

@@ -23,8 +23,6 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
             slot.unoccupy(this);
         }
         
-
-        Debug.Log("Begin Drag");
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -36,12 +34,10 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     {
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
-        Debug.Log("End Drag");
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("clicked");
     }
 
     // Start is called before the first frame update
@@ -50,6 +46,8 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = FindObjectOfType<Canvas>();
+        //TODO --- THIS IS FOR DEBUG STUFF
+        word.text = "Key";
     }
 
     public void SetWord(string txt)

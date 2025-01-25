@@ -28,24 +28,24 @@ public class Bubble
     public void generateWordList()
     {
         wordsInside = new List<string>();
-        if (word1.text != "")
+        if (word1 != null && word1.text != "")
         {
             wordsInside.Add(word1.text);
         }
-        if (word2.text != "")
+        if (word2 != null && word2.text != "")
         {
             wordsInside.Add(word2.text);
         }
-        if (word2.text != "")
+        if (word3 != null && word3.text != "")
         {
-            wordsInside.Add(word2.text);
+            wordsInside.Add(word3.text);
         }
     }
 
 
     public int isSolved()
     {
-
+        generateWordList();
         int index = 0;
         foreach(List<string> l in solutions)
         {
@@ -64,6 +64,8 @@ public class Bubble
         {
             for (int i = 0; i < list1.Count; i++)
             {
+                Debug.Log(list1[i]);
+                Debug.Log(list2[i]);
                 if (list1[i].Equals(list2[i]))
                 {
 
@@ -78,6 +80,7 @@ public class Bubble
         {
             equal = false;
         }
+        Debug.Log(equal);
         return equal;
     }
 

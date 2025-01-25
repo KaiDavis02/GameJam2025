@@ -6,6 +6,8 @@ public class DropSlot : MonoBehaviour, IDropHandler
 {
     public bool occupied;
     public DragDrop occupant;
+    public SpeechBubble speechBubble;
+    public int slotNo;
     public virtual void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
@@ -16,6 +18,10 @@ public class DropSlot : MonoBehaviour, IDropHandler
             occupied = true;
             occupant.inSlot = true;
             occupant.slot = this;
+            if (speechBubble != null)
+            {
+                speechBubble.updateWords(occupant.word, slotNo);
+            }
         }
         
     }
@@ -35,5 +41,13 @@ public class DropSlot : MonoBehaviour, IDropHandler
     {
         occupied = false;
         occupant = null;
+        speechBubble.updateWords(new Word(), slotNo);
+    }
+    public void occupy(DragDrop dd)
+    {
+        occupied = true;
+        occupant = dd;
+        dd.slot = this;
+        dd.inSlot = true;
     }
 }

@@ -47,7 +47,7 @@ public static class Initiator
         Bubble b = new Bubble();
         List<Bubble> bs = new List<Bubble>();
         bs.Add(b);
-
+        p.bubblesLeft = bs;
         Word w = new Word();
         w.text = "News";
 
