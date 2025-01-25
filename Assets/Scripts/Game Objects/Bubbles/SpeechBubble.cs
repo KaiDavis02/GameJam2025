@@ -10,6 +10,8 @@ public class SpeechBubble : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] GameObject slot;
     [SerializeField] VerticalLayoutGroup group;
+    [SerializeField] GameObject TextLinePrefab;
+    [SerializeField] GameObject AdjustText;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class SpeechBubble : MonoBehaviour
         List<string> l1 = new List<string>();
         textList.Add(l1);
         int index = 0;
+        // Split sentence into parts
         foreach (string w in words)
         {
             if (w.Equals("[SLOT]"))
@@ -46,7 +49,55 @@ public class SpeechBubble : MonoBehaviour
                 textList[index].Add(w);
             }
         }
+        List<GameObject> lines = new List<GameObject>();
+        GameObject line1 = Instantiate(TextLinePrefab, transform);
+        line1.GetComponent<TextLine>().maxLength = GetComponent<RectTransform>().rect.width;
+        lines.Add(line1);
 
+        int lineIndex = 0;
+        int listIndex = 1;
+
+        foreach (List<string> l in textList)
+        {
+            string someWords = "";
+            foreach (string s in l)
+            {
+                someWords += s;
+                someWords += " ";
+            }
+            GameObject textA = Instantiate(AdjustText, transform);
+            textA.GetComponent<TextMeshProUGUI>().text = someWords;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(textA.GetComponent<RectTransform>());
+            if (lines[lineIndex].GetComponent<TextLine>().spaceToAdd(textA))
+            {
+                lines[lineIndex].GetComponent<TextLine>().addStuff(textA);
+            }
+            else
+            {
+                GameObject newLine = Instantiate(TextLinePrefab, transform);
+                lines.Add(newLine);
+                lineIndex += 1;
+                newLine.GetComponent<TextLine>().maxLength = GetComponent<RectTransform>().rect.width;
+                newLine.GetComponent<TextLine>().addStuff(textA);
+            }
+            if (listIndex < textList.Count)
+            {
+                GameObject box = Instantiate(slot, transform);
+                if (lines[lineIndex].GetComponent<TextLine>().spaceToAdd(box))
+                {
+                    lines[lineIndex].GetComponent<TextLine>().addStuff(box);
+                }
+                else
+                {
+                    GameObject newLine = Instantiate(TextLinePrefab, transform);
+                    lines.Add(newLine);
+                    lineIndex += 1;
+                    newLine.GetComponent<TextLine>().maxLength = GetComponent<RectTransform>().rect.width;
+                    newLine.GetComponent<TextLine>().addStuff(box);
+                }
+            }
+            listIndex++;
+        }
 
         //text.text = bubble.text;
     }
