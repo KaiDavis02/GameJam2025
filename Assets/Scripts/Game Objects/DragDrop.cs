@@ -17,6 +17,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     {
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = .6f;
+        transform.parent = canvas.transform;
         if (inSlot)
         {
             inSlot = false;
