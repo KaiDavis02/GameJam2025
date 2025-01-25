@@ -9,9 +9,18 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     [SerializeField] Canvas canvas;
     RectTransform rect;
     CanvasGroup canvasGroup;
+    public bool inSlot;
+    public DropSlot slot;
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+        if (inSlot)
+        {
+            inSlot = false;
+            slot.unoccupy();
+        }
+        
+
         Debug.Log("Begin Drag");
     }
 
