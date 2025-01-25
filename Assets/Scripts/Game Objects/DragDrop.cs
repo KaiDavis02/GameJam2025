@@ -10,9 +10,9 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     [SerializeField] Canvas canvas;
     RectTransform rect;
     CanvasGroup canvasGroup;
-    public bool inSlot;
-    public DropSlot slot;
-    public Word word = new Word();
+    [HideInInspector] public bool inSlot;
+    [HideInInspector] public DropSlot slot;
+    [HideInInspector] public Word word = new Word();
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
@@ -47,13 +47,14 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = FindObjectOfType<Canvas>();
-        //TODO --- THIS IS FOR DEBUG STUFF
-        word.text = "Key";
+        TextMeshProUGUI childTMP = GetComponentInChildren<TextMeshProUGUI>();
+        SetWord(childTMP.text);
     }
 
     public void SetWord(string txt)
     {
         word.text = txt;
+        Debug.Log("Draggable created with word: " + txt);
     }
 
     // Update is called once per frame

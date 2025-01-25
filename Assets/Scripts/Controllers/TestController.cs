@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestController : MonoBehaviour
+public class TestController : MonoBehaviour, IController
 {
 
     [SerializeField] GameObject Bubble1;
@@ -58,5 +58,4 @@ public class TestController : MonoBehaviour
             Debug.Log("Puzzle solved");
         }
     }
-
 }

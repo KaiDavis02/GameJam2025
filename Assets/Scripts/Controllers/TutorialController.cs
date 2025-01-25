@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialController : MonoBehaviour
+public class TutorialController : MonoBehaviour, IController
 {
     [SerializeField] GameObject speechBubblePrefab;
     [SerializeField] GameObject draggablePrefab;
