@@ -16,25 +16,25 @@ public class Bubble
     public List<List<string>> solutions;
     public List<string> wordsInside;
 
-    public string word1;
-    public string word2;
-    public string word3;
+    public Word word1;
+    public Word word2;
+    public Word word3;
 
     // turns the individual words into the list used for comparison
     public void generateWordList()
     {
         wordsInside = new List<string>();
-        if (word1 != "")
+        if (word1.text != "")
         {
-            wordsInside.Add(word1);
+            wordsInside.Add(word1.text);
         }
-        if (word2 != "")
+        if (word2.text != "")
         {
-            wordsInside.Add(word2);
+            wordsInside.Add(word2.text);
         }
-        if (word2 != "")
+        if (word2.text != "")
         {
-            wordsInside.Add(word2);
+            wordsInside.Add(word2.text);
         }
     }
 
