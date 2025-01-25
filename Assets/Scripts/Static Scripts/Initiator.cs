@@ -25,7 +25,7 @@ public static class Initiator
         b1.noOfSlots = 1;
         b2.noOfSlots = 0;
 
-        b1.text = "I found the [SLOT]";
+        b1.text = "I found the [SLOT] blah blah";
         b2.text = "I can't get out";
 
 

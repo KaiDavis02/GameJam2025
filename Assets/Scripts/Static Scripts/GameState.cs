@@ -30,6 +30,7 @@ public static class GameState
     public static Problem sideProblemChurch;
     public static Problem sideProblemCourt;
     public static Problem sideProblemTutorial;
+    public static Problem debugProblem;
     public static void enterTutorial()
     {
         if (firstTutorial)
@@ -38,6 +39,10 @@ public static class GameState
             tutorialProblem = Initiator.genProblemTutorial();
         }
     }
-
+    public static void genDebugProblem()
+    {
+        debugProblem = Initiator.genProblemTutorial();
+    }
+    
 
 }
