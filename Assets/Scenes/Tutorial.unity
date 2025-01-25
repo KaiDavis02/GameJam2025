@@ -227,9 +227,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4876458544265072694, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
       propertyPath: m_Name
       value: Draggable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_text
+      value: text1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -349,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draggable (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_text
+      value: text4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -467,6 +479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draggable (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_text
+      value: text3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -584,6 +600,10 @@ PrefabInstance:
     - target: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
       propertyPath: m_Name
       value: Draggable (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_text
+      value: text2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -795,6 +815,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draggable (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_text
+      value: text7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -912,6 +936,10 @@ PrefabInstance:
     - target: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
       propertyPath: m_Name
       value: Draggable (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_text
+      value: text6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1207,6 +1235,10 @@ PrefabInstance:
     - target: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
       propertyPath: m_Name
       value: Draggable (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_text
+      value: text5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

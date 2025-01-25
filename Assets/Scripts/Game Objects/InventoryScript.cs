@@ -64,7 +64,12 @@ public class InventoryScript : MonoBehaviour
     {
         //Debug.Log("Removing "+ word.text + " from inventory");
         words.Remove(word);
+
         SetWords();
+        
+        if (words.Count <= listPosition + 3) {
+            scrollRightObj.SetActive(false);
+        }
     }
 
     public void ScrollLeft()

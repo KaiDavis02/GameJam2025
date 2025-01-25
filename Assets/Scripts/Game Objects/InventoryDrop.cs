@@ -10,7 +10,7 @@ public class InventoryDrop : DropSlot
         if (eventData.pointerDrag != null)
         {
             Debug.Log("Dropped into inventory");
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
             occupant = eventData.pointerDrag.GetComponent<DragDrop>();
 
             inventoryScript.Add(occupant.word);

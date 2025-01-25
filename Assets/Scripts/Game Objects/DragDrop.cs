@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,7 +12,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     CanvasGroup canvasGroup;
     public bool inSlot;
     public DropSlot slot;
-    public Word word;
+    public Word word = new Word();
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
@@ -48,12 +49,12 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     {
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        canvas = FindObjectOfType<Canvas>();
     }
 
-    public void SetWord(Word word)
+    public void SetWord(string txt)
     {
-        this.word = word;
-
+        word.text = txt;
     }
 
     // Update is called once per frame
