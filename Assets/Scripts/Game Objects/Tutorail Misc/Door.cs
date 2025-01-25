@@ -14,7 +14,6 @@ public class Door : MonoBehaviour, IPointerClickHandler
         {
             SceneManager.LoadScene("Outside");
         }
-        throw new System.NotImplementedException();
     }
 
     // Start is called before the first frame update
