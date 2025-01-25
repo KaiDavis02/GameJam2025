@@ -51,6 +51,8 @@ public static class Initiator
         Word w = new Word();
         w.text = "News";
 
+        b.text = "ABC [SLOT] at 10";
+
         return p;
     }
     public static Problem genProblem3()
