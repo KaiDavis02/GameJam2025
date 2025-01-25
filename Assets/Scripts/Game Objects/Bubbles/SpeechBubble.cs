@@ -14,7 +14,7 @@ public class SpeechBubble : MonoBehaviour
     [SerializeField] GameObject AdjustText;
 
 
-    [SerializeField] GameObject Controller;
+    public GameObject Controller;
 
 
     List<DropSlot> slots;

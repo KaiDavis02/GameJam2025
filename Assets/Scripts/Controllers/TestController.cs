@@ -48,6 +48,7 @@ public class TestController : MonoBehaviour
 
         GameObject dragabble = Instantiate(dragabblePrefab, canvas.transform);
         newBub.GetComponent<SpeechBubble>().addToSlot(1, dragabble.GetComponent<DragDrop>());
+        newBub.GetComponent<SpeechBubble>().Controller = this.gameObject;
     }
 
     public void checkComplete()
