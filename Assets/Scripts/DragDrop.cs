@@ -11,6 +11,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     CanvasGroup canvasGroup;
     public bool inSlot;
     public DropSlot slot;
+    public Word word;
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
