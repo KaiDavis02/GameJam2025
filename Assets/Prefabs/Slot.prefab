@@ -33,10 +33,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312.51434, y: 118.2182}
-  m_SizeDelta: {x: 123.168, y: 29.5636}
+  m_AnchorMin: {x: 0.43569568, y: 0.45820293}
+  m_AnchorMax: {x: 0.6346957, y: 0.62666184}
+  m_AnchoredPosition: {x: -1.1310883, y: 6.743988}
+  m_SizeDelta: {x: 0.30799866, y: 7.818199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9072903613434349404
 CanvasRenderer:
@@ -60,6 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   occupied: 0
   occupant: {fileID: 0}
+  speechBubble: {fileID: 0}
+  slotNo: 0
 --- !u!114 &8558167605937219515
 MonoBehaviour:
   m_ObjectHideFlags: 0

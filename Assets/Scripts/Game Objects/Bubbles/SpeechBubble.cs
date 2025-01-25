@@ -128,7 +128,7 @@ public class SpeechBubble : MonoBehaviour
             default:
                 break;
         }
-        Controller.GetComponent<TestController>().checkComplete();
+        Controller.GetComponent<TutorialController>().checkComplete();
     }
     public void addToSlot(int slotNo, DragDrop dd)
     {
