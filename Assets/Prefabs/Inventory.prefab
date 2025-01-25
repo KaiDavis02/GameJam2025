@@ -379,6 +379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   occupied: 0
   occupant: {fileID: 0}
+  speechBubble: {fileID: 0}
+  slotNo: 0
   inventoryScript: {fileID: 5283704796121153615}
 --- !u!1 &6899405869312548475
 GameObject:
