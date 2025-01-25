@@ -8,10 +8,10 @@ public class TestController : MonoBehaviour
     [SerializeField] GameObject Bubble1;
     SpeechBubble testBub;
     Problem p;
-    [SerializeField] TextLine testLine;
-    [SerializeField] GameObject testText;
-    [SerializeField] GameObject testText2;
-    [SerializeField] GameObject testSlot;
+    [SerializeField] GameObject bubblePrefab;
+    [SerializeField] Canvas canvas;
+    [SerializeField] GameObject dragabblePrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +25,7 @@ public class TestController : MonoBehaviour
         testBub.bubble = p.bubblesLeft[p.leftIndex];
         testBub.writeText();
 
-        testLine.addStuff(testText);
-        testLine.addStuff(testSlot);
-        testLine.addStuff(testText2);
+        makeTestFilledBubble();
     }
 
     // Update is called once per frame
@@ -36,6 +34,28 @@ public class TestController : MonoBehaviour
         
     }
 
+    public void makeTestFilledBubble()
+    {
+       
+        Problem newP = Initiator.genProblemTV();
 
+        Bubble b = newP.bubblesLeft[newP.leftIndex];
+
+        GameObject newBub = Instantiate(bubblePrefab, canvas.transform);
+        newBub.GetComponent<SpeechBubble>().bubble = b;
+        newBub.GetComponent<SpeechBubble>().writeText();
+        newBub.GetComponent<RectTransform>().position = new Vector3(0, 0, 0);
+
+        GameObject dragabble = Instantiate(dragabblePrefab, canvas.transform);
+        newBub.GetComponent<SpeechBubble>().addToSlot(1, dragabble.GetComponent<DragDrop>());
+    }
+
+    public void checkComplete()
+    {
+        if (p.isSolved() != 0)
+        {
+            Debug.Log("Puzzle solved");
+        }
+    }
 
 }
