@@ -31,6 +31,7 @@ public class MainMenuController : MonoBehaviour, IController
         Debug.Log("User selected word: " + word);
         if (word.Equals("Start"))
         {
+            GameState.start();
             SceneManager.LoadScene("AngelIntro");
         }
         else if (word.Equals("Exit"))

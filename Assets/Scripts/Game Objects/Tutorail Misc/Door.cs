@@ -4,15 +4,23 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class Door : MonoBehaviour, IPointerClickHandler
+public class Door : MonoBehaviour
 {
     public bool locked = true;
 
-    public void OnPointerClick(PointerEventData eventData)
+    //public void OnPointerClick(PointerEventData eventData)
+    //{
+    //    if (!locked)
+    //    {
+    //        SceneManager.LoadScene("Outside");
+    //    }
+    //}
+
+    public void click()
     {
         if (!locked)
         {
-            SceneManager.LoadScene("Outside");
+            SceneManager.LoadScene("Road1");
         }
     }
 

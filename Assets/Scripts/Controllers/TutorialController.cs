@@ -7,7 +7,7 @@ public class TutorialController : MonoBehaviour, IController
     [SerializeField] GameObject speechBubblePrefab;
     [SerializeField] GameObject draggablePrefab;
     [SerializeField] Canvas canvas;
-    [SerializeField] GameObject door;
+    bool locked = true;
 
     Problem p;
     // Start is called before the first frame update
@@ -64,7 +64,14 @@ public class TutorialController : MonoBehaviour, IController
         if (p.isSolved() != 0)
         {
             Debug.Log("Puzzle solved");
-            door.GetComponent<Door>().locked = false;
+            locked = false;
+        }
+    }
+    public void door()
+    {
+        if (!locked)
+        {
+            SceneManager.LoadScene("Road1");
         }
     }
 }
