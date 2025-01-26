@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 public class InventoryDrop : DropSlot
 {
     [SerializeField] InventoryScript inventoryScript;
@@ -29,6 +30,16 @@ public class InventoryDrop : DropSlot
         if (AngelIntroController != null && AngelIntroEnable)
         {
             AngelIntroController.GetComponent<AngelIntro>().done();
+        }
+
+        if (SceneManager.GetActiveScene().name == "AngelAlley" && GameState.loveAquired && GameState.joyAquired && GameState.funAquired)
+        {
+            AngelIntroEnable = true;
+        }
+
+        if (SceneManager.GetActiveScene().name == "DevilAlley" && GameState.hateAquired && GameState.evilAquired && GameState.painAquired)
+        {
+            AngelIntroEnable = true;
         }
     }
 

@@ -28,7 +28,6 @@ public class DropSlot : MonoBehaviour, IDropHandler
             }
             WordChanged(occupant.word.text);
         }
-        
     }
 
     // Start is called before the first frame update
