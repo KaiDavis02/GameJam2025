@@ -9,7 +9,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
 
     [SerializeField] Canvas canvas;
     RectTransform rect;
-    CanvasGroup canvasGroup;
+    public CanvasGroup canvasGroup;
     [HideInInspector] public bool inSlot;
     [HideInInspector] public DropSlot slot;
     [HideInInspector] public Word word = new Word();
@@ -44,17 +44,22 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     // Start is called before the first frame update
     void Start()
     {
-        TextMeshProUGUI childTMP = GetComponentInChildren<TextMeshProUGUI>();
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = FindObjectOfType<Canvas>();
-        //SetWord(childTMP.text);
+
+        TextMeshProUGUI childTMP = GetComponentInChildren<TextMeshProUGUI>();
+        Word tmpWord = new Word();
+        tmpWord.text = childTMP.text;
+        SetWord(tmpWord);
     }
 
-    public void SetWord(string txt)
+    public void SetWord(Word w)
     {
-        word.text = txt;
-        Debug.Log("Draggable created with word: " + txt);
+        word = w;
+        TextMeshProUGUI childTMP = GetComponentInChildren<TextMeshProUGUI>();
+        childTMP.text = w.text;
+        Debug.Log("Draggable created with word: " + w.text);
     }
 
     // Update is called once per frame

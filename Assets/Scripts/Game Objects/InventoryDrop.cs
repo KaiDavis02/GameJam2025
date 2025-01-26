@@ -6,6 +6,7 @@ public class InventoryDrop : DropSlot
 {
     [SerializeField] InventoryScript inventoryScript;
     [SerializeField] GameObject AngelIntroController;
+    public bool AngelIntroEnable = false;
     public override void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
@@ -20,9 +21,12 @@ public class InventoryDrop : DropSlot
             {
                 occupant.gameObject.transform.SetParent(this.gameObject.transform, false);
                 inventoryScript.Add(occupant.word);
+                
+                occupant.canvasGroup.blocksRaycasts = true;
+                occupant.canvasGroup.alpha = 1f;
             }
         }
-        if (AngelIntroController != null)
+        if (AngelIntroController != null && AngelIntroEnable)
         {
             AngelIntroController.GetComponent<AngelIntro>().done();
         }
