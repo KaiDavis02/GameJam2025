@@ -4,6 +4,10 @@ using UnityEngine;
 
 public static class GameState 
 {
+    // save inventory state
+    public static List<Word> inventoryState = new List<Word>();
+    public static int inventoryPosition = 0;
+
     // save the sate of all the problems in the game
 
     // controllers should access this every time they are loaded

@@ -44,11 +44,11 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     // Start is called before the first frame update
     void Start()
     {
+        TextMeshProUGUI childTMP = GetComponentInChildren<TextMeshProUGUI>();
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = FindObjectOfType<Canvas>();
-        TextMeshProUGUI childTMP = GetComponentInChildren<TextMeshProUGUI>();
-        SetWord(childTMP.text);
+        //SetWord(childTMP.text);
     }
 
     public void SetWord(string txt)
