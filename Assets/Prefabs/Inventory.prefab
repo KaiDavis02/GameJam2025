@@ -281,7 +281,6 @@ GameObject:
   - component: {fileID: 86091690764461165}
   - component: {fileID: 4541851394063068869}
   - component: {fileID: 5283704796121153615}
-  - component: {fileID: 144893545808565560}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -365,23 +364,6 @@ MonoBehaviour:
   dragable: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
   scrollRightObj: {fileID: 1664268846908763657}
   scrollLeftObj: {fileID: 6899405869312548475}
---- !u!114 &144893545808565560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255370066269868509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37c3ccd803e15d4c80d8e4f534c5119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupied: 0
-  occupant: {fileID: 0}
-  speechBubble: {fileID: 0}
-  slotNo: 0
-  inventoryScript: {fileID: 5283704796121153615}
 --- !u!1 &6899405869312548475
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +643,7 @@ GameObject:
   - component: {fileID: 4489166166248706055}
   - component: {fileID: 8156344667943002232}
   - component: {fileID: 4410561579516685610}
+  - component: {fileID: 6080489162816420548}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -751,3 +734,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &6080489162816420548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8817112655431871892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37c3ccd803e15d4c80d8e4f534c5119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  occupied: 0
+  occupant: {fileID: 0}
+  speechBubble: {fileID: 0}
+  slotNo: 0
+  inventoryScript: {fileID: 5283704796121153615}
+  AngelIntroController: {fileID: 0}

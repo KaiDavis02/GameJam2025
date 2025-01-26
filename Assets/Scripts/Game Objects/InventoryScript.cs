@@ -7,11 +7,6 @@ public class InventoryScript : MonoBehaviour
 {
     [SerializeField] HorizontalLayoutGroup horizontalLayoutGroup;
     [SerializeField] GameObject dragable;
-
-    // list of word object in inventory
-    private List<Word> words = new List<Word>();
-    private int listPosition = 0;
-
     [SerializeField] GameObject scrollRightObj;
     [SerializeField] GameObject scrollLeftObj;
 
@@ -20,64 +15,61 @@ public class InventoryScript : MonoBehaviour
     {
         scrollLeftObj.SetActive(false);
         scrollRightObj.SetActive(false);
+        SetWords();
     }
 
     void SetWords()
     {
-        // clear layoutgroup
-         foreach (Transform child in horizontalLayoutGroup.transform)
+        Debug.Log("Called setwords");
+        // disable gameobjects in layoutgroup apart from those to be viewed
+        foreach (Transform child in horizontalLayoutGroup.transform)
+        {
+            GameObject childGameObject = child.gameObject;
+            DragDrop dragDropScript = childGameObject.GetComponent<DragDrop>();
+            int index = GameState.inventoryState.IndexOf(dragDropScript.word);
+            if (index >= GameState.inventoryPosition && index < GameState.inventoryPosition + 3)
             {
-                Destroy(child.gameObject); // Delete the child object
+                childGameObject.SetActive(true);
+            } else {
+                childGameObject.SetActive(false);
             }
-        
-            // add new gameobjects for the words to disply
-            for (int i = listPosition; i < listPosition + 3; i++)
-            {
-                if (i < words.Count){
-                FillInventory(words[i]);
-                }
-            }
-    }
+        }
 
-    void FillInventory(Word word)
-    {
-        GameObject newObject = Instantiate(dragable);
-        newObject.transform.SetParent(horizontalLayoutGroup.transform, false);
         LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
     }
     
     public void Add(Word word)
     {
         //Debug.Log("Adding " + word.text + " to inventory");
-        words.Add(word);
+        GameState.inventoryState.Add(word);
 
-        // if listposition * 3 or less words in list, call fill inventory
-        if (words.Count <= listPosition + 3) 
+        Debug.Log("GameState.inventoryState.count: " + GameState.inventoryState.Count + "         GameState.inventoryPosition: "+ GameState.inventoryPosition);
+        if (GameState.inventoryState.Count > GameState.inventoryPosition + 3)
         {
-            FillInventory(word);
-        } else {
             scrollRightObj.SetActive(true);
         }
+
+        SetWords();
     }
 
     public void Take(Word word)
     {
         //Debug.Log("Removing "+ word.text + " from inventory");
-        words.Remove(word);
+        GameState.inventoryState.Remove(word);
 
         SetWords();
         
-        if (words.Count <= listPosition + 3) {
+        if (GameState.inventoryState.Count <= GameState.inventoryPosition + 3) {
             scrollRightObj.SetActive(false);
         }
     }
 
     public void ScrollLeft()
     {
-        listPosition -= 3;
+        GameState.inventoryPosition -= 3;
         SetWords();
         
-        if (listPosition == 0){
+        if (GameState.inventoryPosition == 0){
             scrollLeftObj.SetActive(false);
         }
 
@@ -86,10 +78,10 @@ public class InventoryScript : MonoBehaviour
 
     public void ScrollRight()
     {
-        listPosition += 3;
+        GameState.inventoryPosition += 3;
         SetWords();
         
-        if (words.Count < listPosition + 3){
+        if (GameState.inventoryState.Count < GameState.inventoryPosition + 3){
             scrollRightObj.SetActive(false);
         }
 

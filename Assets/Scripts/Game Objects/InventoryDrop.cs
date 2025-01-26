@@ -13,9 +13,14 @@ public class InventoryDrop : DropSlot
             Debug.Log("Dropped into inventory");
             eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
             occupant = eventData.pointerDrag.GetComponent<DragDrop>();
+            occupant.inSlot = true;
+            occupant.slot = this;
 
-            inventoryScript.Add(occupant.word);
-            Destroy(occupant.gameObject);
+            if (!((GameState.inventoryState.Contains(occupant.word)) || (occupant.word.Equals("New Text"))))
+            {
+                occupant.gameObject.transform.SetParent(this.gameObject.transform, false);
+                inventoryScript.Add(occupant.word);
+            }
         }
         if (AngelIntroController != null)
         {

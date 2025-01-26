@@ -241,6 +241,10 @@ PrefabInstance:
       propertyPath: dragable
       value: 
       objectReference: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+    - target: {fileID: 6080489162816420548, guid: d3e3c547783a78140a1740d153be60bd, type: 3}
+      propertyPath: AngelIntroController
+      value: 
+      objectReference: {fileID: 105254938}
     - target: {fileID: 7323855378445241374, guid: d3e3c547783a78140a1740d153be60bd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
