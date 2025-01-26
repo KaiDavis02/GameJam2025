@@ -81,14 +81,14 @@ public class Church1Controller : MonoBehaviour, IController
         speech1.GetComponent<SpeechBubble>().Controller = this.gameObject;
         speech2.GetComponent<SpeechBubble>().Controller = this.gameObject;
 
-        if (bL.word1 != null)
+        if (bL.word1 != null && bL.word1.text != "")
         {
             Debug.Log("IT HAS A WORD " + bL.word1.text);
             GameObject dragabble = Instantiate(draggablePrefab, canvas.transform);
             dragabble.GetComponent<DragDrop>().SetWord(bL.word1);
             speech1.GetComponent<SpeechBubble>().addToSlot(1, dragabble.GetComponent<DragDrop>());
         }
-        if (bR.word1 != null)
+        if (bR.word1 != null && bR.word1.text != "")
         {
             Debug.Log("IT HAS A WORD");
             GameObject dragabble = Instantiate(draggablePrefab, canvas.transform);

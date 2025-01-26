@@ -70,6 +70,7 @@ public class TutorialController : MonoBehaviour, IController
     }
     public void door()
     {
+        Debug.Log("clicked");
         if (!locked)
         {
             SceneManager.LoadScene("Road1");
