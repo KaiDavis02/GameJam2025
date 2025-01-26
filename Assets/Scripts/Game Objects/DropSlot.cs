@@ -23,6 +23,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
             Debug.Log("Slotted: " + occupant.word.text);
             if (speechBubble != null)
             {
+                Debug.Log("Adding word: " + occupant.word.text);
                 speechBubble.updateWords(occupant.word, slotNo);
             }
             WordChanged(occupant.word.text);

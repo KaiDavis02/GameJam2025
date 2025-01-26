@@ -9,6 +9,8 @@ public class Problem
     public int leftIndex = 0;
     public int rightIndex = 0;
 
+    // use this to track the state, can be anything you want.
+    public int state = 0;
 
     // THIS MEANS WHETHER IT IS A MAIN PROBLEM (One to solve)
     // OR A PROBLEM TO JUST GIVE YOU WORDS
@@ -32,16 +34,19 @@ public class Problem
         // if the right does not need a solution
         if (bubblesRight[rightIndex].noOfSlots == 0)
         {
+            Debug.Log("checking only left");
             return bubblesLeft[leftIndex].isSolved();
         }
         // if the left does not need a solution
         else if (bubblesLeft[leftIndex].noOfSlots ==0)
         {
+            Debug.Log("Checking only right");
             return bubblesRight[rightIndex].isSolved();
         }
         // if both are filled with the same solution
         else if (bubblesLeft[leftIndex].isSolved() == bubblesRight[rightIndex].isSolved())
         {
+            Debug.Log("Checking both");
             return bubblesRight[rightIndex].isSolved();
         }
         else

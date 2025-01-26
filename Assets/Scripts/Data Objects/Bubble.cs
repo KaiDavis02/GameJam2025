@@ -50,8 +50,10 @@ public class Bubble
         foreach(List<string> l in solutions)
         {
             index++;
+            Debug.Log("Comparing to solution: " + index);
             if (compareLists(l, wordsInside))
             {
+                Debug.Log("Returning: " + index);
                 return index;
             }
         }
@@ -64,7 +66,9 @@ public class Bubble
         {
             for (int i = 0; i < list1.Count; i++)
             {
+                Debug.Log("Word for solution:");
                 Debug.Log(list1[i]);
+                Debug.Log("Word in bubble");
                 Debug.Log(list2[i]);
                 if (list1[i].Equals(list2[i]))
                 {

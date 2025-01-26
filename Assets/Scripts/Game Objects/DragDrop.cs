@@ -48,7 +48,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = FindObjectOfType<Canvas>();
-        //SetWord(childTMP.text);
+        SetWord(childTMP.text);
     }
 
     public void SetWord(string txt)
