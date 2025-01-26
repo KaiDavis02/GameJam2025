@@ -225,4 +225,92 @@ public static class Initiator
 
         return p;
     }
+
+    public static Problem genChruch1()
+    {
+        Problem p = new Problem();
+        Bubble b1L = new Bubble();
+        Bubble b1R = new Bubble();
+        Bubble b2L = new Bubble();
+        Bubble b3L = new Bubble();
+
+        List<Bubble> bsLeft = new List<Bubble>();
+        List<Bubble> bsRight = new List<Bubble>();
+
+        p.bubblesLeft = bsLeft;
+        p.bubblesRight = bsRight;
+
+        bsLeft.Add(b1L); bsLeft.Add(b2L); bsLeft.Add(b3L);
+        bsRight.Add(b1R); 
+
+        b1R.text = "Should I get a new [SLOT]";
+        b1L.text = "";
+        b1L.noOfSlots = 0;
+        b2L.text = "Do what brings you [SLOT]";
+        b2L.noOfSlots = 1;
+        b3L.text = "That's just [SLOT]";
+        b3L.noOfSlots = 1;
+
+        Word w1 = new Word();
+        w1.text = "Joy";
+        Word w2 = new Word();
+        w2.text = "Evil";
+
+        b2L.word1 = w1;
+        b3L.word1 = w2;
+
+        List<List<string>> soltn = new List<List<string>>();
+        List<string> s1 = new List<string>();
+        List<string> s2 = new List<string>();
+        soltn.Add(s1); soltn.Add(s2);
+        s1.Add("Job"); s2.Add("Child");
+
+        b1R.solutions = soltn;
+
+
+        return p;
+    }
+    public static Problem genChruch2()
+    {
+        Problem p = new Problem();
+        Bubble b1L = new Bubble();
+        Bubble b1R = new Bubble();
+        Bubble b2L = new Bubble();
+        Bubble b3L = new Bubble();
+
+        List<Bubble> bsLeft = new List<Bubble>();
+        List<Bubble> bsRight = new List<Bubble>();
+
+        p.bubblesLeft = bsLeft;
+        p.bubblesRight = bsRight;
+
+        bsLeft.Add(b1L); bsLeft.Add(b2L); bsLeft.Add(b3L);
+        bsRight.Add(b1R);
+
+        b1R.text = "What is the meaning of [SLOT]";
+        b1L.text = "";
+        b1L.noOfSlots = 0;
+        b2L.text = "To have [SLOT] and make games";
+        b2L.noOfSlots = 1;
+        b3L.text = "Something that causes [SLOT]";
+        b3L.noOfSlots = 1;
+
+        Word w1 = new Word();
+        w1.text = "Fun";
+        Word w2 = new Word();
+        w2.text = "Pain";
+
+        b2L.word1 = w1;
+        b3L.word1 = w2;
+
+        List<List<string>> soltn = new List<List<string>>();
+        List<string> s1 = new List<string>();
+        List<string> s2 = new List<string>();
+        soltn.Add(s1); soltn.Add(s2);
+        s1.Add("Life"); s2.Add("Evil");
+
+        b1R.solutions = soltn;
+
+        return p;
+    }
 }

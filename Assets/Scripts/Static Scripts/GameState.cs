@@ -25,7 +25,8 @@ public static class GameState
     public static Problem maritalProblem;
 
 
-    public static Problem confessionProblem;
+    public static Problem church1;
+    public static Problem church2;
 
     public static Problem devilProblem;
 
@@ -52,7 +53,7 @@ public static class GameState
     {
         debugProblem = Initiator.genProblemTutorial();
     }
-    
+
     public static void start()
     {
         tutorialProblem = Initiator.genProblemTutorial();
@@ -64,5 +65,8 @@ public static class GameState
 
         maritalProblem = Initiator.generateCouple();
         litterProblem = Initiator.genProblemLitter();
+
+        church1 = Initiator.genChruch1();
+        church2 = Initiator.genChruch2();
     }
 }
