@@ -922,6 +922,18 @@ PrefabInstance:
       propertyPath: m_ChildScaleWidth
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4410561579516685610, guid: d3e3c547783a78140a1740d153be60bd, type: 3}
+      propertyPath: m_ChildScaleHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410561579516685610, guid: d3e3c547783a78140a1740d153be60bd, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410561579516685610, guid: d3e3c547783a78140a1740d153be60bd, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5283704796121153615, guid: d3e3c547783a78140a1740d153be60bd, type: 3}
       propertyPath: dragable
       value: 
