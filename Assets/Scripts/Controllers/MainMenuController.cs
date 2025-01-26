@@ -31,7 +31,7 @@ public class MainMenuController : MonoBehaviour, IController
         Debug.Log("User selected word: " + word);
         if (word.Equals("Start"))
         {
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("AngelIntro");
         }
         else if (word.Equals("Exit"))
         {

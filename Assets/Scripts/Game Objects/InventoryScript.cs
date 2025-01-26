@@ -15,6 +15,14 @@ public class InventoryScript : MonoBehaviour
     {
         scrollLeftObj.SetActive(false);
         scrollRightObj.SetActive(false);
+
+        foreach (Word word in GameState.inventoryState)
+        {
+            GameObject newObject = Instantiate(dragable);
+            DragDrop dragDropScript = newObject.GetComponent<DragDrop>();
+            dragDropScript.SetWord(word);
+            newObject.transform.SetParent(horizontalLayoutGroup.transform, false);
+        }
         SetWords();
     }
 

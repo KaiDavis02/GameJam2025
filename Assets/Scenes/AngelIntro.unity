@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  sceneName: Tutorial
 --- !u!224 &474377529 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4781395909867018985, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
@@ -241,6 +242,10 @@ PrefabInstance:
       propertyPath: dragable
       value: 
       objectReference: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+    - target: {fileID: 6080489162816420548, guid: d3e3c547783a78140a1740d153be60bd, type: 3}
+      propertyPath: AngelIntroEnable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6080489162816420548, guid: d3e3c547783a78140a1740d153be60bd, type: 3}
       propertyPath: AngelIntroController
       value: 

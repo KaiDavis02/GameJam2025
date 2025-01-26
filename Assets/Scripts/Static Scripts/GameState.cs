@@ -8,6 +8,15 @@ public static class GameState
     public static List<Word> inventoryState = new List<Word>();
     public static int inventoryPosition = 0;
 
+    // save alleyway word state
+    public static bool hateAquired = false;
+    public static bool evilAquired = false;
+    public static bool painAquired = false;
+
+    public static bool loveAquired = false;
+    public static bool joyAquired = false;
+    public static bool funAquired = false;
+
     // save the sate of all the problems in the game
 
     // controllers should access this every time they are loaded

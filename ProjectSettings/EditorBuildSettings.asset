@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5036fc1cc5deeea48988362b1094fe99
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 0d05940ec4324e740aa77fc545658c80
   - enabled: 1
@@ -30,14 +33,17 @@ EditorBuildSettings:
     path: Assets/Scenes/End.unity
     guid: 931be970b7a0ace4b91aee44d2b9adee
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 5036fc1cc5deeea48988362b1094fe99
-  - enabled: 1
     path: Assets/Scenes/Road.unity
     guid: 13112197b2b86a248b011176398439b5
   - enabled: 1
+    path: Assets/Scenes/AngelIntro.unity
+    guid: b2ebc71dcf662b343a2bcf8a32ecb260
+  - enabled: 1
     path: Assets/Scenes/TrialRoom.unity
     guid: 812485a76af3b744cb4d780d79488f9f
+  - enabled: 1
+    path: Assets/Scenes/Road1.unity
+    guid: e1738733558236747924c7e8beb13f77
   - enabled: 1
     path: Assets/Scenes/Road3.unity
     guid: 45f41696354d21f49bb400f0c0d5d729
