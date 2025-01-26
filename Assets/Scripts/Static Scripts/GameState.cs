@@ -8,41 +8,48 @@ public static class GameState
 
     // controllers should access this every time they are loaded
 
-
-    // Booleans to determine whether the puzzles need to be generated for the first time or not
-    public static bool firstTutorial = true;
-    // whether this one stays depends on whether we do outside as one scene or multiple
-    public static bool firstOutside = true;
-    public static bool firstChruch = true;
-    public static bool firstDevil = true;
-    public static bool firstCourt = true;
-
     public static Problem tutorialProblem;
     public static Problem maritalProblem;
+
+
     public static Problem confessionProblem;
+
     public static Problem devilProblem;
+
     public static Problem trialProblem;
 
-    public static Problem sideProblemOutside1;
-    public static Problem sideProblemOutside2;
-    public static Problem sideProblemOutside3;
+    public static Problem catProblem;
+    public static Problem planeProblem;
+    public static Problem jobProblem;
+    public static Problem tvProblem;
+    public static Problem gfProblem;
+    public static Problem litterProblem;
 
     public static Problem sideProblemChurch;
     public static Problem sideProblemCourt;
-    public static Problem sideProblemTutorial;
+    
     public static Problem debugProblem;
     public static void enterTutorial()
     {
-        if (firstTutorial)
-        {
-            firstTutorial = false;
+        
             tutorialProblem = Initiator.genProblemTutorial();
-        }
+        
     }
     public static void genDebugProblem()
     {
         debugProblem = Initiator.genProblemTutorial();
     }
     
+    public static void start()
+    {
+        tutorialProblem = Initiator.genProblemTutorial();
+        tvProblem = Initiator.genProblemTV();
 
+        catProblem = Initiator.genProblemCat();
+        planeProblem = Initiator.genProblemPlane();
+        gfProblem = Initiator.genProblemGirlfriend();
+
+        maritalProblem = Initiator.generateCouple();
+        litterProblem = Initiator.genProblemLitter();
+    }
 }
