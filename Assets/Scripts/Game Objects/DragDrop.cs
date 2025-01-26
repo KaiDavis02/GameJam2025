@@ -58,6 +58,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     {
         word = w;
         TextMeshProUGUI childTMP = GetComponentInChildren<TextMeshProUGUI>();
+        Debug.Log(childTMP.text);
         childTMP.text = w.text;
         Debug.Log("Draggable created with word: " + w.text);
     }

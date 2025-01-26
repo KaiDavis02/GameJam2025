@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draggable
       objectReference: {fileID: 0}
+    - target: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
       propertyPath: m_text
       value: Cat
@@ -858,6 +862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draggable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7935274046416621587, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
       propertyPath: m_text
       value: Girlfriend
@@ -1176,6 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speechBubblePrefab: {fileID: 316126112953669525, guid: abc327e2a92b2864e98a7cc6a5b3b26e, type: 3}
   canvas: {fileID: 415649048}
+  draggablePrefab: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
 --- !u!4 &1510380575
 Transform:
   m_ObjectHideFlags: 0

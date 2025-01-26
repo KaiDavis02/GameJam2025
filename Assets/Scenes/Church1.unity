@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speechBubblePrefab: {fileID: 316126112953669525, guid: abc327e2a92b2864e98a7cc6a5b3b26e, type: 3}
   canvas: {fileID: 842864688}
+  draggablePrefab: {fileID: 7570600118707832660, guid: b7462a9ae015bab46ba402727a5e0cbd, type: 3}
 --- !u!4 &205804641
 Transform:
   m_ObjectHideFlags: 0

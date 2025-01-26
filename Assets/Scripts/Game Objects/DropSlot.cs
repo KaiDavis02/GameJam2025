@@ -53,6 +53,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
         occupant = dd;
         dd.slot = this;
         dd.inSlot = true;
+        dd.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
     }
 
 

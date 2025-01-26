@@ -9,6 +9,7 @@ public class Church1Controller : MonoBehaviour, IController
     GameObject speech1;
     GameObject speech2;
     Problem chruch1Prob;
+    [SerializeField] GameObject draggablePrefab;
     public void checkComplete()
     {
         //state 0, start
@@ -48,9 +49,9 @@ public class Church1Controller : MonoBehaviour, IController
     // Start is called before the first frame update
     void Start()
     {
-        //DEBUG
-        GameState.start();
-        //DEBUG
+        ////DEBUG
+        //GameState.start();
+        ////DEBUG
         chruch1Prob = GameState.church1;
         loadProblem(chruch1Prob);
     }
@@ -79,6 +80,21 @@ public class Church1Controller : MonoBehaviour, IController
 
         speech1.GetComponent<SpeechBubble>().Controller = this.gameObject;
         speech2.GetComponent<SpeechBubble>().Controller = this.gameObject;
+
+        if (bL.word1 != null)
+        {
+            Debug.Log("IT HAS A WORD " + bL.word1.text);
+            GameObject dragabble = Instantiate(draggablePrefab, canvas.transform);
+            dragabble.GetComponent<DragDrop>().SetWord(bL.word1);
+            speech1.GetComponent<SpeechBubble>().addToSlot(1, dragabble.GetComponent<DragDrop>());
+        }
+        if (bR.word1 != null)
+        {
+            Debug.Log("IT HAS A WORD");
+            GameObject dragabble = Instantiate(draggablePrefab, canvas.transform);
+            dragabble.GetComponent<DragDrop>().SetWord(bR.word1);
+            speech2.GetComponent<SpeechBubble>().addToSlot(1, dragabble.GetComponent<DragDrop>());
+        }
     }
     void removeBubs()
     {
